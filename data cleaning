@@ -1,0 +1,8 @@
+import pandas as pd
+
+customers = pd.read_csv("C:\\Users\\Admin\\PycharmProjects\\pythonProject\\us-500.csv")
+duplicates=customers.duplicated(subset=["first_name",'email']).sum()
+print(duplicates)
+
+//code that imports my first data set into pandas framework with 500 data items , and delete duplicates
+//first step towards data cleaning 
