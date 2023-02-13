@@ -1,0 +1,11 @@
+def square(x):
+    return x*x
+l=square(10)
+print(l)
+
+square=lambda n:n*n
+print(square(5))
+
+l=list(range(100))
+squ=list(map(square,l))
+print(squ)
