@@ -1,0 +1,31 @@
+from flask import Flask,request,jsonify
+
+app=Flask(__name__)
+
+@app.route('/abc',methods=['GET','POST'])
+
+def test():
+    if (request.method=='POST'):
+        a=request.json['num1']
+        b=request.json['num2']
+        result=a+b
+        return jsonify((str(result)))
+@app.route('/abc1',methods=['GET','POST'])
+def test1():
+    if (request.method=='POST'):
+        a=request.json['num1']
+        b=request.json['num2']
+        result=a*b
+        return jsonify((str(result)))
+
+
+if __name__=='__main__':
+    app.run()
+
+# use install postman app which can be used a platform to run this function by just giving the url - like '\abc' with the local server address like http://127.0.0.1:5000
+# pass the data as json like key and value in the postman 
+# Get and post are the methods by which we can post the data or function using url or using body;
+#GET- using URl method
+#POSt - Using body method
+#body method is safe as the user will not come to know the source in the search bar
+#In postman click on + sign and then selecting POST method,in that select Body and then raw,paste the url , and click send by givng the JSON values
